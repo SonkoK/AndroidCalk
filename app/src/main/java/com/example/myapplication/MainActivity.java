@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initializeButtons();
         initBtnListener();
+    }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == 1){
+//            int b = data.getIntExtra("valueResult", -1);
+//        }
+//    }
+
+    void goNewWind(int result) {
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("value", result);
+        startActivityForResult(intent, 1);
     }
 
     public void initializeButtons() {
@@ -46,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 temp += "0";
                 textView.setText(temp);
+
 
             }
         });
@@ -169,19 +187,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-               String[] templA=temp.split("\\+|-|\\*|/");
+                String[] templA = temp.split("\\+|-|\\*|/");
 
-                if(temp.indexOf('*')!=-1){
-                    temp= String.valueOf(Integer.valueOf(templA[0])*Integer.valueOf(templA[1]));
-                } else  if(temp.indexOf('/')!=-1){
-                    temp= String.valueOf(Integer.valueOf(templA[0])/Integer.valueOf(templA[1]));
-                }else  if(temp.indexOf('-')!=-1){
-                    temp= String.valueOf(Integer.valueOf(templA[0])-Integer.valueOf(templA[1]));
-                }
-                else  if(temp.indexOf('+')!=-1){
-                    temp= String.valueOf(Integer.valueOf(templA[0])+Integer.valueOf(templA[1]));
+                if (temp.indexOf('*') != -1) {
+                    temp = String.valueOf(Integer.valueOf(templA[0]) * Integer.valueOf(templA[1]));
+                } else if (temp.indexOf('/') != -1) {
+                    temp = String.valueOf(Integer.valueOf(templA[0]) / Integer.valueOf(templA[1]));
+                } else if (temp.indexOf('-') != -1) {
+                    temp = String.valueOf(Integer.valueOf(templA[0]) - Integer.valueOf(templA[1]));
+                } else if (temp.indexOf('+') != -1) {
+                    temp = String.valueOf(Integer.valueOf(templA[0]) + Integer.valueOf(templA[1]));
                 }
                 textView.setText(temp);
+
             }
         });
     }

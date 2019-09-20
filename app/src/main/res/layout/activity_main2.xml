@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity"
+    android:id="@+id/R2"
+    android:orientation="vertical">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="30pt">
+        <Spinner
+            android:gravity="bottom"
+            android:layout_width="90pt"
+            android:layout_height="30pt"
+            android:id="@+id/spinner">
+        </Spinner>
+        <EditText
+            android:layout_width="90pt"
+            android:layout_height="30pt"
+            android:id="@+id/text_spinner1"
+            android:text="60"
+            android:textSize="15pt"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30pt">
+                <Spinner
+                    android:gravity="bottom"
+                    android:layout_width="90pt"
+                    android:layout_height="30pt"
+                    android:id="@+id/spinner2">
+                </Spinner>
+                <EditText
+                    android:layout_width="90pt"
+                    android:layout_height="30pt"
+                    android:id="@+id/text_spinner2"
+                    android:text="50"
+                    android:textSize="15pt"/>
+        </LinearLayout>
+        </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
