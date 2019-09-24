@@ -1,79 +1,115 @@
-package com.example.myapplication;
+
+
+        package com.example.myapplication;
+
+        import com.google.gson.annotations.Expose;
+        import com.google.gson.annotations.SerializedName;
 
 public class Rates {
 
+    @SerializedName("GBP")
+    @Expose
     private Double gBP;
-
+    @SerializedName("HKD")
+    @Expose
     private Double hKD;
-
+    @SerializedName("IDR")
+    @Expose
     private Double iDR;
-
+    @SerializedName("ILS")
+    @Expose
     private Double iLS;
-
+    @SerializedName("DKK")
+    @Expose
     private Double dKK;
-
+    @SerializedName("INR")
+    @Expose
     private Double iNR;
-
+    @SerializedName("CHF")
+    @Expose
     private Double cHF;
-
+    @SerializedName("MXN")
+    @Expose
     private Double mXN;
-
+    @SerializedName("CZK")
+    @Expose
     private Double cZK;
-
+    @SerializedName("SGD")
+    @Expose
     private Double sGD;
-
+    @SerializedName("THB")
+    @Expose
     private Double tHB;
-
+    @SerializedName("HRK")
+    @Expose
     private Double hRK;
-
+    @SerializedName("MYR")
+    @Expose
     private Double mYR;
-
+    @SerializedName("NOK")
+    @Expose
     private Double nOK;
-
+    @SerializedName("CNY")
+    @Expose
     private Double cNY;
-
+    @SerializedName("BGN")
+    @Expose
     private Double bGN;
-
+    @SerializedName("PHP")
+    @Expose
     private Double pHP;
-
+    @SerializedName("SEK")
+    @Expose
     private Double sEK;
-
+    @SerializedName("PLN")
+    @Expose
     private Double pLN;
-
+    @SerializedName("ZAR")
+    @Expose
     private Double zAR;
-
+    @SerializedName("CAD")
+    @Expose
     private Double cAD;
-
+    @SerializedName("ISK")
+    @Expose
     private Double iSK;
-
+    @SerializedName("BRL")
+    @Expose
     private Double bRL;
+    @SerializedName("RON")
+    @Expose
     private Double rON;
-
+    @SerializedName("NZD")
+    @Expose
     private Double nZD;
-
+    @SerializedName("TRY")
+    @Expose
     private Double tRY;
-
+    @SerializedName("JPY")
+    @Expose
     private Double jPY;
-
+    @SerializedName("RUB")
+    @Expose
     private Double rUB;
-
+    @SerializedName("KRW")
+    @Expose
     private Double kRW;
-
+    @SerializedName("USD")
+    @Expose
     private Double uSD;
-
+    @SerializedName("HUF")
+    @Expose
     private Double hUF;
-
+    @SerializedName("AUD")
+    @Expose
     private Double aUD;
 
     public Double getGBP() {
         return gBP;
     }
+
     public void setGBP(Double gBP) {
         this.gBP = gBP;
-    }
-    public Rates withGBP(Double gBP) {
-        this.gBP = gBP;
-        return this;
     }
 
     public Double getHKD() {
@@ -84,22 +120,12 @@ public class Rates {
         this.hKD = hKD;
     }
 
-    public Rates withHKD(Double hKD) {
-        this.hKD = hKD;
-        return this;
-    }
-
     public Double getIDR() {
         return iDR;
     }
 
     public void setIDR(Double iDR) {
         this.iDR = iDR;
-    }
-
-    public Rates withIDR(Double iDR) {
-        this.iDR = iDR;
-        return this;
     }
 
     public Double getILS() {
@@ -110,22 +136,12 @@ public class Rates {
         this.iLS = iLS;
     }
 
-    public Rates withILS(Double iLS) {
-        this.iLS = iLS;
-        return this;
-    }
-
     public Double getDKK() {
         return dKK;
     }
 
     public void setDKK(Double dKK) {
         this.dKK = dKK;
-    }
-
-    public Rates withDKK(Double dKK) {
-        this.dKK = dKK;
-        return this;
     }
 
     public Double getINR() {
@@ -136,22 +152,12 @@ public class Rates {
         this.iNR = iNR;
     }
 
-    public Rates withINR(Double iNR) {
-        this.iNR = iNR;
-        return this;
-    }
-
     public Double getCHF() {
         return cHF;
     }
 
     public void setCHF(Double cHF) {
         this.cHF = cHF;
-    }
-
-    public Rates withCHF(Double cHF) {
-        this.cHF = cHF;
-        return this;
     }
 
     public Double getMXN() {
@@ -162,22 +168,12 @@ public class Rates {
         this.mXN = mXN;
     }
 
-    public Rates withMXN(Double mXN) {
-        this.mXN = mXN;
-        return this;
-    }
-
     public Double getCZK() {
         return cZK;
     }
 
     public void setCZK(Double cZK) {
         this.cZK = cZK;
-    }
-
-    public Rates withCZK(Double cZK) {
-        this.cZK = cZK;
-        return this;
     }
 
     public Double getSGD() {
@@ -188,22 +184,12 @@ public class Rates {
         this.sGD = sGD;
     }
 
-    public Rates withSGD(Double sGD) {
-        this.sGD = sGD;
-        return this;
-    }
-
     public Double getTHB() {
         return tHB;
     }
 
     public void setTHB(Double tHB) {
         this.tHB = tHB;
-    }
-
-    public Rates withTHB(Double tHB) {
-        this.tHB = tHB;
-        return this;
     }
 
     public Double getHRK() {
@@ -214,22 +200,12 @@ public class Rates {
         this.hRK = hRK;
     }
 
-    public Rates withHRK(Double hRK) {
-        this.hRK = hRK;
-        return this;
-    }
-
     public Double getMYR() {
         return mYR;
     }
 
     public void setMYR(Double mYR) {
         this.mYR = mYR;
-    }
-
-    public Rates withMYR(Double mYR) {
-        this.mYR = mYR;
-        return this;
     }
 
     public Double getNOK() {
@@ -240,22 +216,12 @@ public class Rates {
         this.nOK = nOK;
     }
 
-    public Rates withNOK(Double nOK) {
-        this.nOK = nOK;
-        return this;
-    }
-
     public Double getCNY() {
         return cNY;
     }
 
     public void setCNY(Double cNY) {
         this.cNY = cNY;
-    }
-
-    public Rates withCNY(Double cNY) {
-        this.cNY = cNY;
-        return this;
     }
 
     public Double getBGN() {
@@ -266,22 +232,12 @@ public class Rates {
         this.bGN = bGN;
     }
 
-    public Rates withBGN(Double bGN) {
-        this.bGN = bGN;
-        return this;
-    }
-
     public Double getPHP() {
         return pHP;
     }
 
     public void setPHP(Double pHP) {
         this.pHP = pHP;
-    }
-
-    public Rates withPHP(Double pHP) {
-        this.pHP = pHP;
-        return this;
     }
 
     public Double getSEK() {
@@ -292,22 +248,12 @@ public class Rates {
         this.sEK = sEK;
     }
 
-    public Rates withSEK(Double sEK) {
-        this.sEK = sEK;
-        return this;
-    }
-
     public Double getPLN() {
         return pLN;
     }
 
     public void setPLN(Double pLN) {
         this.pLN = pLN;
-    }
-
-    public Rates withPLN(Double pLN) {
-        this.pLN = pLN;
-        return this;
     }
 
     public Double getZAR() {
@@ -318,22 +264,12 @@ public class Rates {
         this.zAR = zAR;
     }
 
-    public Rates withZAR(Double zAR) {
-        this.zAR = zAR;
-        return this;
-    }
-
     public Double getCAD() {
         return cAD;
     }
 
     public void setCAD(Double cAD) {
         this.cAD = cAD;
-    }
-
-    public Rates withCAD(Double cAD) {
-        this.cAD = cAD;
-        return this;
     }
 
     public Double getISK() {
@@ -344,22 +280,12 @@ public class Rates {
         this.iSK = iSK;
     }
 
-    public Rates withISK(Double iSK) {
-        this.iSK = iSK;
-        return this;
-    }
-
     public Double getBRL() {
         return bRL;
     }
 
     public void setBRL(Double bRL) {
         this.bRL = bRL;
-    }
-
-    public Rates withBRL(Double bRL) {
-        this.bRL = bRL;
-        return this;
     }
 
     public Double getRON() {
@@ -370,22 +296,12 @@ public class Rates {
         this.rON = rON;
     }
 
-    public Rates withRON(Double rON) {
-        this.rON = rON;
-        return this;
-    }
-
     public Double getNZD() {
         return nZD;
     }
 
     public void setNZD(Double nZD) {
         this.nZD = nZD;
-    }
-
-    public Rates withNZD(Double nZD) {
-        this.nZD = nZD;
-        return this;
     }
 
     public Double getTRY() {
@@ -396,22 +312,12 @@ public class Rates {
         this.tRY = tRY;
     }
 
-    public Rates withTRY(Double tRY) {
-        this.tRY = tRY;
-        return this;
-    }
-
     public Double getJPY() {
         return jPY;
     }
 
     public void setJPY(Double jPY) {
         this.jPY = jPY;
-    }
-
-    public Rates withJPY(Double jPY) {
-        this.jPY = jPY;
-        return this;
     }
 
     public Double getRUB() {
@@ -422,22 +328,12 @@ public class Rates {
         this.rUB = rUB;
     }
 
-    public Rates withRUB(Double rUB) {
-        this.rUB = rUB;
-        return this;
-    }
-
     public Double getKRW() {
         return kRW;
     }
 
     public void setKRW(Double kRW) {
         this.kRW = kRW;
-    }
-
-    public Rates withKRW(Double kRW) {
-        this.kRW = kRW;
-        return this;
     }
 
     public Double getUSD() {
@@ -448,11 +344,6 @@ public class Rates {
         this.uSD = uSD;
     }
 
-    public Rates withUSD(Double uSD) {
-        this.uSD = uSD;
-        return this;
-    }
-
     public Double getHUF() {
         return hUF;
     }
@@ -461,22 +352,12 @@ public class Rates {
         this.hUF = hUF;
     }
 
-    public Rates withHUF(Double hUF) {
-        this.hUF = hUF;
-        return this;
-    }
-
     public Double getAUD() {
         return aUD;
     }
 
     public void setAUD(Double aUD) {
         this.aUD = aUD;
-    }
-
-    public Rates withAUD(Double aUD) {
-        this.aUD = aUD;
-        return this;
     }
 
 }

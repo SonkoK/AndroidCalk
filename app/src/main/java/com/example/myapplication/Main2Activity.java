@@ -39,31 +39,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main2Activity extends AppCompatActivity {
-    private TextView textView;
-    private EditText editText1,editText2;
+    private EditText editText1, editText2;
     private Spinner spinner, spinner2;
     private Currencies USD = new Currencies(), EUR = new Currencies(), RUB = new Currencies();
-    private Currencies[] currencies = {USD,  EUR, RUB};
+    private Currencies[] currencies = {USD, EUR, RUB};
     private ArrayList<Currencies> arrayList = new ArrayList<>();
-
+    private double rate1, rate2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        handlInitializeCurensy();
-//        Intent intent = getIntent();
-//        int i = intent.getIntExtra("value", -1);
-//        textView = findViewById(R.id.text);
-//        if (i != -1) {
-//            textView.setText(String.valueOf(i));
-//        }
-        editText1=findViewById(R.id.text_spinner1);
-        editText2=findViewById(R.id.text_spinner2);
-        spinner = findViewById(R.id.spinner);
-        spinner2 = findViewById(R.id.spinner2);
 
-        initSpinner();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -74,6 +61,15 @@ public class Main2Activity extends AppCompatActivity {
                 }
             }
         }).start();
+
+        handlInitializeCurensy();
+        editText1 = findViewById(R.id.text_spinner1);
+        editText2 = findViewById(R.id.text_spinner2);
+        spinner = findViewById(R.id.spinner);
+        spinner2 = findViewById(R.id.spinner2);
+
+        initSpinner();
+
         spinnerListners();
 
     }
@@ -85,15 +81,29 @@ public class Main2Activity extends AppCompatActivity {
         spinner.setPrompt("Title");
         spinner2.setAdapter(myAdapter);
         spinner2.setPrompt("Title");// выделяем элемент
-
-        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-              ((CurencyAdapter)spinner.getAdapter()).
-                //currencies[i].getRate()
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                rate1 = arrayList.get(i).getRate();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
-//        spinner.setSelection(2);// устанавливаем обработчик нажатия
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                rate2 = arrayList.get(i).getRate();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
 
     protected void initializeCurrency() throws Exception {
@@ -109,10 +119,11 @@ public class Main2Activity extends AppCompatActivity {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         Example example = gson.fromJson(line, Example.class);
-        USD.setRate(example.getRates().getUSD());
-        RUB.setRate(example.getRates().getRUB());
+        USD.setRate(example.getRates().getUSD().doubleValue());
+        RUB.setRate(example.getRates().getRUB().doubleValue());
         EUR.setRate(1);
-        //currencies= new Currencies("dolar",R.drawable.dolar,example.getRates().getUSD());
+
+
     }
 
     protected void handlInitializeCurensy() {
@@ -126,30 +137,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
-    protected void spinnerListners(){
+
+    protected void spinnerListners() {
 
 
-   editText1.addTextChangedListener(new TextWatcher() {
-       @Override
-       public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-       }
-
-       @Override
-       public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-       }
-
-       @Override
-       public void afterTextChanged(Editable editable) {
-//       Currencies c1=    (Currencies)spinner.getAdapter().
-//       Currencies c2=    (Currencies)spinner.getSelectedItem();
-       double value1=Double.valueOf(editText1.getText().toString());
-       value1*=c1.getRate();
-       editText2.setText(String.valueOf(value1*=c2.getRate()));
-       }
-   });
-        editText2.addTextChangedListener(new TextWatcher() {
+        editText1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -162,12 +154,36 @@ public class Main2Activity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                Currencies c1=    (Currencies)spinner.getSelectedItem();
-                Currencies c2=    (Currencies)spinner.getSelectedItem();
-                double value2=Double.valueOf(editText2.getText().toString());
-                value2*=c2.getRate();
-                editText1.setText(String.valueOf(value2*=c1.getRate()));
+
+                double value1 = Double.valueOf(editText1.getText().toString());
+                value1 /= rate1;
+                editText2.setText(String.valueOf(value1 *= rate2));
             }
         });
+//        editText2.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//                if (!editable.toString().equals("")) {
+//                    double value2 = Double.valueOf(editText2.getText().toString());
+//                    double res = value2 / rate2;
+//                    res = res * rate1;
+//                    editText1.setText(String.valueOf(res));
+//                }
+//            }
+//        });
+    }
+
+    void log(Object data) {
+        Log.d("IJKAPP", String.valueOf(data));
     }
 }

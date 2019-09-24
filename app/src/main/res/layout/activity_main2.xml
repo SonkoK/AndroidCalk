@@ -21,6 +21,7 @@
             android:id="@+id/spinner">
         </Spinner>
         <EditText
+            android:inputType="numberDecimal"
             android:layout_width="90pt"
             android:layout_height="30pt"
             android:id="@+id/text_spinner1"
@@ -37,6 +38,7 @@
                     android:id="@+id/spinner2">
                 </Spinner>
                 <EditText
+                    android:inputType="numberDecimal"
                     android:layout_width="90pt"
                     android:layout_height="30pt"
                     android:id="@+id/text_spinner2"

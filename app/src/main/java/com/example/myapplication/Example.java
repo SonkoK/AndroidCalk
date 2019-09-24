@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 public class Example {
 
-
     private String base;
 
     private Rates rates;
