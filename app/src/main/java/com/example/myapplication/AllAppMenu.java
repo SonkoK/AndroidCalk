@@ -18,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class AllAppMenu extends AppCompatActivity {
-    private Button btnCalk, btnKonv;
+    private Button btnCalk, btnKonv,btnTime;
     private TextView textView;
 
     @Override
@@ -30,7 +30,7 @@ public class AllAppMenu extends AppCompatActivity {
 
         btnCalk = findViewById(R.id.calk);
         btnKonv = findViewById(R.id.konv);
-        textView= findViewById(R.id.cours);
+        btnTime= findViewById(R.id.timer);
         btnStrt();
         //ArrayAdapter<String> adapter = new ArrayAdapter<>();
 //        try {
@@ -56,6 +56,13 @@ public class AllAppMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+            btnTime.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(AllAppMenu.this, Main2Activity.class);
+                    startActivity(intent);
+                }
+            });
 
     }
 

@@ -23,10 +23,13 @@
             android:layout_height="50pt"
             android:text="Konverter"
             android:textSize="10pt"/>
-        <TextView
+        <Button
+            android:id="@+id/timer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/cours"/>
+            android:layout_height="50pt"
+            android:text="Timer"
+            android:textSize="10pt"/>
+
     </LinearLayout>
 
 
